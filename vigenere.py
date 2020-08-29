@@ -30,6 +30,8 @@ def encrypt_with_vigenere():
     plain_text=input("Enter the text to encrypt: ")
 
     key=input("Enter key for encryption: ")
+    
+    plain_text=plain_text.replace(' ', '')
 
     key1=create_key(plain_text,key)
 
@@ -57,6 +59,8 @@ def decrypt_with_vigenere():
     cipher_text=input("Enter the text to decrypt: ")
 
     key=input("Enter key for decryption: ")
+    
+    cipher_text=cipher_text.replace(' ', '')
 
     key1=create_key(cipher_text,key)
 
