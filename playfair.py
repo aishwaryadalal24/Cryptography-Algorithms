@@ -34,6 +34,8 @@ def encrypt_with_playfair():
     plain_text=input("Enter text to be encrypted: ")
 
     key=input("enter key for encryption: ")
+   
+    plain_text=plain_text.replace(' ', '')
 
     
     
@@ -89,6 +91,8 @@ def encrypt_with_playfair():
 def decrypt_with_playfair():
     cipher_text=input("enter text to be decrypted: ")
     key=input("enter key for decryption: ")
+   
+    cipher_text=cipher_text.replace(' ', '')
     
     key_arr=key_array_generator(key)
     
