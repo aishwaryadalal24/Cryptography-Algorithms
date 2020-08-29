@@ -15,6 +15,8 @@ def create_rail(pl,d,text):
         for j in range(d):
             key_arr[j][i]=text[k]
             k=k+1
+            if(k==pl):
+                break
 
     return key_arr
 
@@ -31,6 +33,8 @@ def decreate_rail(pl,d,text):
         for j in range(n):
             key_arr[i][j]=text[k]
             k=k+1
+            if(k==pl):
+                break
             
     return key_arr
     
@@ -58,10 +62,13 @@ def encrypt_with_RailFence():
     
 
     cipher_text=[]
-
+    k=0
     for i in range(d):
         for j in range(n):
             cipher_text.append(key_arr[i][j])
+            k=k+1
+            if(k==pl):
+                break
 
     print("Encrypted text is: "+str(b"".join(cipher_text),'utf-8'))
     
@@ -86,10 +93,13 @@ def decrypt_with_RailFence():
         n=int(cl/d)
     else:
         n=int(cl/d)+1
-
+    k=0
     for i in range(n):
         for j in range(d):
             plain_text.append(key_arr[j][i])
+            k=k+1
+            if(k==cl):
+                break
             
             
     print("decrypted text is: "+str(b"".join(plain_text),'utf-8'))
